@@ -1,3 +1,3 @@
 export default {
-  prefix: CONFIG_PREFIX,
+  prefix: 't',
 };

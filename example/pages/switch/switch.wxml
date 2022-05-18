@@ -5,7 +5,7 @@
   <t-demo title="01 类型" desc="基础开关">
     <view class="group">
       <t-cell title="默认">
-        <t-switch defaultValue="{{true}}" slot="note" />
+        <t-switch customValue="{{[1, 0]}}" value="{{val}}" bindchange="handleChange" slot="note" />
       </t-cell>
       <t-cell title="默认关">
         <t-switch defaultValue="{{false}}" slot="note" />
