@@ -18,10 +18,10 @@ const ux = {
       name: 'Loading',
       label: '加载',
     },
-    // {
-    //   name: 'LoadMore',
-    //   label: '加载更多',
-    // },
+    {
+      name: 'LoadMore',
+      label: '加载更多',
+    },
     {
       name: 'Message',
       label: '消息通知',

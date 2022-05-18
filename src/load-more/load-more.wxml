@@ -1,0 +1,51 @@
+<view
+  class="{{classPrefix}} {{classPrefix}}-class"
+  style="{{isEmpty && (status === 0 || status === 2) ? 'display: none' : '' }}"
+  bindtap="tapHandle"
+>
+  <!-- 加载中 -->
+  <t-loading
+    wx:if="{{status === 1}}"
+    class="{{classPrefix}}--safe-bottom"
+    t-class="{{classPrefix}}-class-loading"
+    t-class-text="{{classPrefix}}-class-loading-text"
+    t-class-indicator="{{classPrefix}}-class-loading-indicator"
+    delay="{{loadingProps.delay}}"
+    duration="{{loadingProps.duration}}"
+    indicator="{{loadingProps.indicator}}"
+    inheritColor="{{loadingProps.inheritColor}}"
+    layout="{{loadingProps.layout}}"
+    loading="{{loadingProps.loading}}"
+    pause="{{loadingProps.pause}}"
+    progress="{{loadingProps.progress}}"
+    reverse="{{loadingProps.reverse}}"
+    size="{{loadingProps.size}}"
+    text="{{loadingProps.text}}"
+    theme="{{loadingProps.theme}}"
+  />
+
+  <!-- 已全部加载 -->
+  <t-divider
+    wx:if="{{status === 2}}"
+    class="{{classPrefix}}--safe-bottom"
+    t-class="{{classPrefix}}-class-divider"
+    t-class-content="{{classPrefix}}-class-divider-content"
+    align="{{dividerProps.align}}"
+    content="{{dividerProps.content}}"
+    dashed="{{dividerProps.dashed}}"
+    layout="{{dividerProps.layout}}"
+    lineColor="{{dividerProps.lineColor}}"
+    theme="{{dividerProps.theme}}"
+  />
+
+  <!-- 加载失败 -->
+  <view
+    wx:if="{{status === 3}}"
+    class="{{classPrefix}}--failed {{classPrefix}}--safe-bottom {{classPrefix}}-class-failed"
+  >
+    <view class="btn">{{failedText}}</view>
+  </view>
+</view>
+
+<!-- 支持通过slot传入页面/列表的空态，load-more来控制空态的显示状态 -->
+<slot wx:if="{{isEmpty && (status === 0 || status === 2)}}" slot="empty" />

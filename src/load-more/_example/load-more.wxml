@@ -1,0 +1,27 @@
+<view class="demo">
+  <view class="demo-title">Load More</view>
+  <view class="demo-desc"
+    >用于表示页面或操作的加载状态，给予用户反馈的同时减缓等待的焦虑感，由一个或一组反馈动效组成。</view
+  >
+  <t-demo title="">
+    <view class="box">
+      <t-button t-class="t-button" theme="primary" block bind:tap="handleBtn">带失败状态的下拉加载 </t-button>
+      <t-button theme="primary" variant="plain" data-type="empty" block bind:tap="handleBtn">空态 </t-button>
+    </view>
+    <view class="box">
+      <view class="item" wx:for="{{list}}" wx:key="index"> {{item}} </view>
+      <t-load-more
+        t-failed-class="box--failed__text"
+        t-loading-class="box--loading__example"
+        t-divider-content-class="box--divider__example"
+        loadingProps="{{ {text: '加载中...', loading: true, theme: 'circular', size: '30rpx'} }}"
+        dividerProps="{{ {content: '没有更多了～', theme: 'horizontal', align: 'center', lineColor: 'transparent'} }}"
+        isEmpty="{{!list.length}}"
+        status="{{dataLoading}}"
+        bindretry="onReTry"
+      >
+        <t-empty t-class="empty-cls" slot="empty" image="{{emptyBag}}" description="列表为空" />
+      </t-load-more>
+    </view>
+  </t-demo>
+</view>

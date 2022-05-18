@@ -358,6 +358,13 @@ export default {
           component: () => import('@/loading/README.md'),
         },
         {
+          title: 'LoadingMore 加载更多',
+          name: 'load-more',
+          meta: { docType: 'message' },
+          path: '/miniprogram/components/load-more',
+          component: () => import('@/load-more/README.md'),
+        },
+        {
           title: 'Message 消息通知',
           name: 'message',
           meta: { docType: 'message' },

@@ -1,0 +1,31 @@
+// @import (css) '../common/index.wxss';
+@import '../common/style/index.less';
+
+.@{prefix}-load-more {
+  font-size: 24rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &--loading {
+    width: 100%;
+  }
+
+  &--no-more__content {
+    min-width: 280rpx;
+    text-align: center;
+  }
+
+  &--safe-bottom {
+    margin-bottom: calc(env(safe-area-inset-bottom) + 16rpx);
+  }
+
+  &--failed {
+    text-align: center;
+
+    .btn {
+      display: inline-block;
+    }
+  }
+}
