@@ -37,7 +37,7 @@ describe('switch component', () => {
     test(':colors', async () => {
       const switchBody = switchComp.querySelector('.t-switch__body');
       const switchDot = switchComp.querySelector('.t-switch__dot');
-      const spyBodyChange = sinon.spy(switchComp.instance);
+      const spyChange = sinon.spy(switchComp.instance);
 
       const bgColor = switchBody.dom.style.backgroundColor.includes('rgb')
         ? colorRGB2Hex(switchBody.dom.style.backgroundColor)
@@ -51,8 +51,8 @@ describe('switch component', () => {
       setTimeout(() => {
         expect(bgColor).toBe('#802289');
         expect(switchComp.data.value).toBe(1);
-        expect(spyBodyChange.called).toBe(true);
-        expect(spyBodyChange.callCount).to.be.equal(1);
+        expect(spyChange.called).toBe(true);
+        expect(spyChange.callCount).to.be.equal(1);
         done();
       }, 1000);
 
@@ -61,8 +61,8 @@ describe('switch component', () => {
       setTimeout(() => {
         expect(bgColor).toBe('#272301');
         expect(switchComp.data.value).toBe(0);
-        expect(spyBodyChange.called).toBe(true);
-        expect(spyBodyChange.callCount).to.be.equal(2);
+        expect(spyChange.called).toBe(true);
+        expect(spyChange.callCount).to.be.equal(2);
         done();
       }, 1000);
 
@@ -71,8 +71,8 @@ describe('switch component', () => {
       setTimeout(() => {
         expect(bgColor).toBe('#802289');
         expect(switchComp.data.value).toBe(1);
-        expect(spyBodyChange.called).toBe(true);
-        expect(spyBodyChange.callCount).to.be.equal(3);
+        expect(spyChange.called).toBe(true);
+        expect(spyChange.callCount).to.be.equal(3);
         done();
       }, 1000);
 
@@ -81,8 +81,8 @@ describe('switch component', () => {
       setTimeout(() => {
         expect(bgColor).toBe('#272301');
         expect(switchComp.data.value).toBe(0);
-        expect(spyBodyChange.called).toBe(true);
-        expect(spyBodyChange.callCount).to.be.equal(4);
+        expect(spyChange.called).toBe(true);
+        expect(spyChange.callCount).to.be.equal(4);
         done();
       }, 1000);
     });
