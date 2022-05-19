@@ -1,5 +1,8 @@
 import path from 'path';
 import simulate from 'miniprogram-simulate';
+import global from '../../../test/utils/global';
+
+global.getApp = () => ({});
 
 describe('radio', () => {
   let id;

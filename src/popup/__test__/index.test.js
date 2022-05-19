@@ -1,5 +1,8 @@
 import path from 'path';
 import simulate from 'miniprogram-simulate';
+import global from '../../../test/utils/global';
+
+global.getApp = () => ({});
 
 // 因 popup 复用 transition，这里不重复测试 transition 逻辑
 describe('popup', () => {

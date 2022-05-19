@@ -1,7 +1,7 @@
 Page({
   data: {
     defaultVal: true,
-    val: 1,
+    val: 0,
   },
   handleChange(e) {
     console.log('e: ', e);

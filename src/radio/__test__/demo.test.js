@@ -1,5 +1,8 @@
 import simulate from 'miniprogram-simulate';
 import getDemoPath from '../../../test/utils/getDemoPath';
+import global from '../../../test/utils/global';
+
+global.getApp = () => ({});
 
 describe('radio basic demo', () => {
   let id;

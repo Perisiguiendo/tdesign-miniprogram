@@ -5,7 +5,7 @@
     "lib": ["es6", "dom", "ES2016.Array.Include"],
     "rootDir": ".",
     "outDir": "dist",
-    "types": ["miniprogram-api-typings", "node"],
+    "types": ["miniprogram-api-typings", "node", "jest"],
     "skipLibCheck": true,
     "declaration": true,
     "baseUrl": ".",
@@ -17,5 +17,5 @@
       "tdesign-miniprogram/*": ["miniprogram_dist/*"]
     }
   },
-  "include": ["src/**/*", "example/**/*", "site/**/*", "typing.d.ts"]
+  "include": ["src/**/*", "example/**/*", "site/**/*", "typing.d.ts", "test/utils/global.js"]
 }
